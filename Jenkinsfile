@@ -11,7 +11,7 @@ pipeline {
 						sh '''
 						echo "this is test stage"
 						'''
-						stage ('my stage') {
+						stage ('my-stage') {
 							steps {
 								sh '''
 								echo "this is my stage"
