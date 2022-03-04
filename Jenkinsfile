@@ -6,8 +6,8 @@ pipeline {
 				sh '''
 				echo "build"
 				'''
+			}
 		}
-	}
 		stage('test') {
 			steps {
 				sh '''
