@@ -6,10 +6,15 @@ pipeline {
 				sh '''
 				git clone https://github.com/Darshan629/java-project.git
 				cd /var/lib/jenkins/workspace/pipelinejob1/java-project/
-				mvn clean 
-				mvn install
+				mvn clean install
 				'''
-			
+			}
+		}
+		stage('deploy') {
+			steps {
+				sh '''
+				cd /var/lib/jenkins/workspace/pipelinejob1/java-project/target/
+				sudo cp *.war /home/ec2-user/tomcat/webapps
 			}
 		}
 	}
