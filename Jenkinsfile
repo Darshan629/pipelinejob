@@ -4,24 +4,13 @@ pipeline {
 		stage('build') {
 			steps {
 				sh '''
-				echo "build"
+				git clone https://github.com/Darshan629/java-project.git
+				cd /var/lib/jenkins/workspace/pipelinejob/java-project/
+				mvn clean 
+				mvn install
 				'''
+			
 			}
 		}
-		stage('test') {
-			steps {
-				sh '''
-				echo "test"
-				'''
-			}
-		}
-		stage('deploy') {
-			steps {
-				sh '''
-				echo "deploy"
-				'''
-			}
-		}	
-		
 	}
 }
